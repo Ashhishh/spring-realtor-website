@@ -1,0 +1,141 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff955377a16, pid=12900, tid=5184
+#
+# JRE version: Java(TM) SE Runtime Environment (11.0.4+10) (build 11.0.4+10-LTS)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.4+10-LTS, mixed mode, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x6c7a16]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=61891 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=newproject -Dfile.encoding=Cp1252 com.example.demo.NewprojectApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i5-2410M CPU @ 2.30GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 18362 (10.0.18362.329)
+Time: Sat Feb  8 11:10:03 2020 India Standard Time elapsed time: 1 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000016de73ce800):  WatcherThread [stack: 0x0000001802b00000,0x0000001802c00000] [id=5184]
+
+Stack: [0x0000001802b00000,0x0000001802c00000],  sp=0x0000001802bff600,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c7a16]
+V  [jvm.dll+0x71321d]
+V  [jvm.dll+0x738bd9]
+V  [jvm.dll+0x634c82]
+C  [ucrtbase.dll+0x20e72]
+C  [KERNEL32.DLL+0x17bd4]
+C  [ntdll.dll+0x6ced1]
+
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x0000000800000007
+
+
+Register to memory mapping:
+
+RIP=0x00007ff955377a16 jvm.dll
+RAX=0x0000000800000007 is an unknown value
+RBX=0x0 is NULL
+RCX=0x0000016de73bcf60 points into unknown readable memory: 58 35 58 55 f9 7f 00 00
+RDX=0x0000000000000033 is an unknown value
+RSP=0x0000001802bff600 points into unknown readable memory: 00 e8 3c e7 6d 01 00 00
+RBP=0x0000000000000002 is an unknown value
+RSI=0x0000016de7311cd0 points into unknown readable memory: 07 00 00 00 08 00 00 00
+RDI=0x0000000000000001 is an unknown value
+R8 =0x0000000000000031 is an unknown value
+R9 =0x0000016dcfe70b80 is at begin+0 in a stub
+StubRoutines::atomic_cmpxchg_long [0x0000016dcfe70b80, 0x0000016dcfe70b89[ (9 bytes)
+R10=0x00000000546c6148 is an unknown value
+R11=0x000000faffc01e31 is an unknown value
+R12=0x0 is NULL
+R13=0x0000016de73ce800 points into unknown readable memory: 58 7c 58 55 f9 7f 00 00
+R14=0x0000000000000002 is an unknown value
+R15=0x0000016de72ad4a0 points into unknown readable memory: 00 00 00 00 00 00 00 00
+
+
+Registers:
+RAX=0x0000000800000007, RBX=0x0000000000000000, RCX=0x0000016de73bcf60, RDX=0x0000000000000033
+RSP=0x0000001802bff600, RBP=0x0000000000000002, RSI=0x0000016de7311cd0, RDI=0x0000000000000001
+R8 =0x0000000000000031, R9 =0x0000016dcfe70b80, R10=0x00000000546c6148, R11=0x000000faffc01e31
+R12=0x0000000000000000, R13=0x0000016de73ce800, R14=0x0000000000000002, R15=0x0000016de72ad4a0
+RIP=0x00007ff955377a16, EFLAGS=0x0000000000010246
+
+Top of Stack: (sp=0x0000001802bff600)
+0x0000001802bff600:   0000016de73ce800 0000016de73ce800
+0x0000001802bff610:   00007c806075ebb4 00007ff9552b87c9
+0x0000001802bff620:   00007ff955723798 00007ff9553c321d
+0x0000001802bff630:   0000016dc7b41e00 0000016dc7b41e00
+0x0000001802bff640:   0000016dc7b41e00 431bde82d7b634db
+0x0000001802bff650:   0000016de72ad4a0 00007c806075ebb4
+0x0000001802bff660:   0000016dc7b41e00 00007ff9553e8bd9
+0x0000001802bff670:   0000000000000001 0000000000000002
+0x0000001802bff680:   0000000000000001 0000000000000002
+0x0000001802bff690:   0000000000000000 0000000000000000
+0x0000001802bff6a0:   0000000000000000 0000000000000000
+0x0000001802bff6b0:   0000000000000000 0000000000000000
+0x0000001802bff6c0:   0000000000000000 0000000000000000
+0x0000001802bff6d0:   0000000000000000 0000000000000000
+0x0000001802bff6e0:   0000000000000000 0000001802bff7a0
+0x0000001802bff6f0:   0000016de73ce800 00007ff9552e4c82 
+
+Instructions: (pc=0x00007ff955377a16)
+0x00007ff9553779f6:   cc cc cc cc cc cc cc cc cc cc 48 89 5c 24 10 56
+0x00007ff955377a06:   48 83 ec 20 48 8b 35 47 6c 3a 00 33 db 48 8b 06
+0x00007ff955377a16:   39 18 7e 27 48 89 7c 24 30 8b fb 48 8b 40 18 48
+0x00007ff955377a26:   8b 0c 07 48 8b 01 ff 50 08 48 8b 06 48 8d 7f 08 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x0000016de73ce800 points into unknown readable memory: 58 7c 58 55 f9 7f 00 00
+stack at sp + 1 slots: 0x0000016de73ce800 points into unknown readable memory: 58 7c 58 55 f9 7f 00 00
+stack at sp + 2 slots: 0x00007c806075ebb4 is an unknown value
+stack at sp + 3 slots: 0x00007ff9552b87c9 jvm.dll
+stack at sp + 4 slots: 0x00007ff955723798 jvm.dll
+stack at sp + 5 slots: 0x00007ff9553c321d jvm.dll
+stack at sp + 6 slots: 0x0000016dc7b41e00 points into unknown readable memory: 01 00 00 00 00 00 00 00
+stack at sp + 7 slots: 0x0000016dc7b41e00 points into unknown readable memory: 01 00 00 00 00 00 00 00
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000016de736c0f0, length=14, elements={
+0x0000016dc7b43800, 0x0000016de5f28800, 0x0000016de5f2a000, 0x0000016de6895800,
+0x0000016de6845800, 0x0000016de6848000, 0x0000016de5f31000, 0x0000016de5ea7800,
+0x0000016de6ae7000, 0x0000016de703d800, 0x0000016de703f800, 0x0000016de730e800,
+0x0000016de7314000, 0x0000016de73c4800
+}
+
+Java Threads: ( => current thread )
+  0x0000016dc7b43800 JavaThread "main" [_thread_blocked, id=8596, stack(0x0000001801500000,0x0000001801600000)]
+  0x0000016de5f28800 JavaThread "Reference Handler" daemon [_thread_blocked, id=13076, stack(0x0000001801c00000,0x0000001801d00000)]
+  0x0000016de5f2a000 JavaThread "Finalizer" daemon [_thread_blocked, id=11300, stack(0x0000001801d00000,0x0000001801e00000)]
+  0x0000016de6895800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4380, stack(0x0000001801e00000,0x0000001801f00000)]
+  0x0000016de6845800 JavaThread "Attach Listener" daemon [_thread_blocked, id=7760, stack(0x0000001801f00000,0x0000001802000000)]
+  0x0000016de6848000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=7936, stack(0x0000001802000000,0x0000001802100000)]
+  0x0000016de5f31000 JavaThread "Sweeper thread" daemon [_thread_blocked, id=5352, stack(0x0000001802100000,0x0000001802200000)]
+  0x0000016de5ea7800 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=13984, stack(0x0000001802200000,0x0000001802300000)]
+  0x0000016de6ae7000 JavaThread "Service Thread" daemon [_thread_blocked, id=6636, stack(0x0000001802300000,0x0000001802400000)]
+  0x0000016de703d800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=11500, stack(0x0000001802400000,0x0000001802500000)]
+  0x0000016de703f800 JavaThread "C1 CompilerThread2" daemon [_thread_in_vm, id=8580, stack(0x0000001802500000,0x0000001802600000)]
+  0x0000016de730e800 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=7456, stack(0x0000001802800000,0x0000001802900000)]
+  0x0000016de7314000 JavaThread "RMI TCP Accept-61891" daemon [_thread_in_native, id=13708, stack(0x0000001802900000,0x0000001802a00000)]
+  0x0000016de73c4800 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=916, stack(0x0000001802a00000,0x0000001802b00000)]
+
+Other Threads:
+  0x0000016de5eed800 VMThread "VM Thread" [stack: 0x0000001801b00000,0x0000001801c00000] [id=4280]
+=>0x0000016de73ce800 WatcherThread [stack: 0x0000001802b00000,0x0000001802c00000] [id=5184]
+  0x0000016dc7b56800 GCTaskThread "GC Thread#0" [stack: 0x0000001801600000,0x0000001801700000] [id=1600]
+  0x0000016de72d8000 GCTaskThread "GC Thread#1" [stack: 0x0000001802600000,0x0000001802700000] [id=6556]
+  0x0000016de72d9000 GCTaskThread "GC Thread#2" [stack: 0x0000001802700000,0x0000001802800000] [id=12420]
+  0x0000016dc7b85800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000001801700000,0x0000001801800000] [id=5496]
+  0x0000016dc7b88800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000001801800000,0x0000001801900000] [id=8656]
+  0x0000016de5d5a800

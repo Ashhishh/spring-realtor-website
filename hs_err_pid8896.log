@@ -1,0 +1,105 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb6efce7a5, pid=8896, tid=5660
+#
+# JRE version: Java(TM) SE Runtime Environment (11.0.4+10) (build 11.0.4+10-LTS)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.4+10-LTS, mixed mode, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x65e7a5]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52423 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=newproject -Dfile.encoding=Cp1252 com.example.demo.NewprojectApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i5-2410M CPU @ 2.30GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 18362 (10.0.18362.329)
+Time: Sun Feb  9 09:02:17 2020 India Standard Time elapsed time: 1 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001cc7b8f8800):  WatcherThread [stack: 0x0000007824d00000,0x0000007824e00000] [id=5660]
+
+Stack: [0x0000007824d00000,0x0000007824e00000],  sp=0x0000007824dff730,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x65e7a5]
+V  [jvm.dll+0x6c7a2f]
+V  [jvm.dll+0x71321d]
+V  [jvm.dll+0x738bd9]
+V  [jvm.dll+0x634c82]
+C  [ucrtbase.dll+0x20e72]
+C  [KERNEL32.DLL+0x17bd4]
+C  [ntdll.dll+0x6ced1]
+
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x0000000c0000000b
+
+
+Register to memory mapping:
+
+RIP=0x00007ffb6efce7a5 jvm.dll
+RAX=0x0000000c0000000b is an unknown value
+RBX=0x000001cc7b844160 points into unknown readable memory: 60 a4 23 6f fb 7f 00 00
+RCX=0x000001cc7afc8560 points into unknown readable memory: 0b 00 00 00 0c 00 00 00
+RDX=0x0000000000000032 is an unknown value
+RSP=0x0000007824dff730 points into unknown readable memory: 00 49 0b 5c cc 01 00 00
+RBP=0x0000000000000002 is an unknown value
+RSI=0x000001cc7afc8580 points into unknown readable memory: b0 d0 88 7b cc 01 00 00
+RDI=0x0 is NULL
+R8 =0x0 is NULL
+R9 =0x000001cc643a0b80 is at begin+0 in a stub
+StubRoutines::atomic_cmpxchg_long [0x000001cc643a0b80, 0x000001cc643a0b89[ (9 bytes)
+R10=0x00000000546c6148 is an unknown value
+R11=0x00000041b21487d3 is an unknown value
+R12=0x0 is NULL
+R13=0x000001cc7b8f8800 points into unknown readable memory: 58 7c 24 6f fb 7f 00 00
+R14=0x0000000000000032 is an unknown value
+R15=0x000001cc7b7b0e70 points into unknown readable memory: 00 00 00 00 00 00 00 00
+
+
+Registers:
+RAX=0x0000000c0000000b, RBX=0x000001cc7b844160, RCX=0x000001cc7afc8560, RDX=0x0000000000000032
+RSP=0x0000007824dff730, RBP=0x0000000000000002, RSI=0x000001cc7afc8580, RDI=0x0000000000000000
+R8 =0x0000000000000000, R9 =0x000001cc643a0b80, R10=0x00000000546c6148, R11=0x00000041b21487d3
+R12=0x0000000000000000, R13=0x000001cc7b8f8800, R14=0x0000000000000032, R15=0x000001cc7b7b0e70
+RIP=0x00007ffb6efce7a5, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x0000007824dff730)
+0x0000007824dff730:   000001cc5c0b4900 0000000000000984
+0x0000007824dff740:   0000000000000001 00007ffb6ef77d40
+0x0000007824dff750:   0000000000000000 00007ffb6f037a2f
+0x0000007824dff760:   000001cc7b8f8800 000001cc7b8f8800
+0x0000007824dff770:   0000223bc49a42b0 00007ffb6ef787c9
+0x0000007824dff780:   00007ffb6f3e3798 00007ffb6f08321d
+0x0000007824dff790:   0000000000000001 000001cc5c0b4900
+0x0000007824dff7a0:   000001cc5c0b4900 431bde82d7b634db
+0x0000007824dff7b0:   000001cc7b7b0e70 0000223bc49a42b0
+0x0000007824dff7c0:   000001cc5c0b4900 00007ffb6f0a8bd9
+0x0000007824dff7d0:   0000000000000001 0000000000000032
+0x0000007824dff7e0:   0000000000000032 0000000000000002
+0x0000007824dff7f0:   0000000000000000 0000000000000000
+0x0000007824dff800:   0000000000000000 0000000000000000
+0x0000007824dff810:   0000000000000000 0000000000000000
+0x0000007824dff820:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007ffb6efce7a5)
+0x00007ffb6efce785:   70 48 83 c4 50 5f c3 cc cc cc cc 40 53 48 83 ec
+0x00007ffb6efce795:   20 48 8b d9 48 8b 49 38 48 85 c9 74 0c 48 8b 01
+0x00007ffb6efce7a5:   ff 10 48 8b 4b 28 48 89 01 48 83 c4 20 5b c3 cc
+0x00007ffb6efce7b5:   cc cc cc cc cc cc cc cc cc cc cc 48 89 5c 24 08 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x000001cc5c0b4900 points into unknown readable memory: 01 00 00 00 00 00 00 00
+stack at sp + 1 slots: 0x0000000000000984 is an unknown value
+stack at sp + 2 slots: 0x0000000000000001 is an unknown value
+stack at sp + 3 slots: 0x00007ffb6ef77d40 jvm.dll
+stack at sp + 4 slots: 0x0 is NULL
+stack at sp + 5 slots: 0x00007ffb6f037a2f jvm.dll
+stack at sp + 6 slots: 0x000001cc7b8f8800 points into unknown readable memory: 58 7c 24 6f fb 7f 00 00
+stack at sp + 7 slots: 

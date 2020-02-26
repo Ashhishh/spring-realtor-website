@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Dashboard Page</title>
+</head>
+
+<body>
+
+
+	<span th:text="${userName}"></span>
+	<br>
+	<a th:href="@{/logout}" th:text="Logout"></a>
+	<br>
+</body>
+</html>	
